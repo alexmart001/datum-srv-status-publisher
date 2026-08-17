@@ -22,13 +22,6 @@ public class StatusChangeController {
         this.statusChangePublisherService = statusChangePublisherService;
     }
 
-    /**
-     * Publica no RabbitMQ a solicitação de alteração de status de um
-     * cliente (evento CUSTOMER_STATUS_CHANGE, consumido de forma
-     * assíncrona pelo datum-srv-clientes). 202 Accepted: a requisição foi
-     * aceita e publicada, mas o processamento em si acontece depois, do
-     * outro lado da fila.
-     */
     @PostMapping(
             value = "/{id}/status",
             consumes = MediaType.APPLICATION_JSON_VALUE,

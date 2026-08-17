@@ -11,11 +11,6 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
 
-/**
- * Resource Server do datum-srv-auth: valida o Access Token JWT (mesma
- * claim "roles" usada pelo datum-srv-clientes). Alterar o status de um
- * cliente é uma operação de escrita, então exige papel ADMIN.
- */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

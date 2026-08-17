@@ -3,19 +3,6 @@ package br.com.datum.statuspublisher.dto;
 import java.io.Serial;
 import java.io.Serializable;
 
-/**
- * Mensagem publicada na fila customer_status_changed - o mesmo formato
- * que o CustomerStatusChangeListener do datum-srv-clientes espera:
- * {
- *   "eventId": "cbca5352-22ad-48f2-aaf2-704735bc7737",
- *   "eventType": "CUSTOMER_STATUS_CHANGE",
- *   "customerId": 123,
- *   "status": "INACTIVE"
- * }
- *
- * Também devolvida como corpo da resposta HTTP, como confirmação do que
- * foi publicado.
- */
 public class CustomerStatusChangeEvent implements Serializable {
 
     @Serial
