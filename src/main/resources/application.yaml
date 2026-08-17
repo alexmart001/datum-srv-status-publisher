@@ -4,11 +4,11 @@ spring:
   application:
     name: datum-srv-status-publisher
   rabbitmq:
-    host: localhost
-    port: 5672
-    virtual-host: /
-    username: guest
-    password: guest
+    host: ${RMQ_HOST:localhost}
+    port: ${RMQ_PORT:5672}
+    virtual-host: ${RMQ_VIRTUAL_HOST:/}
+    username: ${RMQ_USERNAME:guest}
+    password: ${RMQ_PASSWORD:guest}
   security:
     oauth2:
       resourceserver:
@@ -17,7 +17,7 @@ spring:
           # resolve automaticamente o JWK Set a partir de
           # {issuer-uri}/.well-known/oauth-authorization-server para
           # validar a assinatura dos tokens.
-          issuer-uri: http://localhost:9000
+          issuer-uri: http://${AUTH_HOST:localhost}:${AUTH_PORT:9000}
 
 datum:
   rabbitmq:
