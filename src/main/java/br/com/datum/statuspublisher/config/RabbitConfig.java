@@ -9,12 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Declara a mesma fila customer_status_changed que o datum-srv-clientes
- * consome (mesmas propriedades: durável, não-exclusiva, tipo classic) -
- * declaração idempotente, então funciona independente de qual dos dois
- * serviços sobe primeiro.
- */
 @Configuration
 public class RabbitConfig {
 

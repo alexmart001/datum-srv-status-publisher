@@ -26,14 +26,6 @@ public class StatusChangePublisherService {
         this.queueName = queueName;
     }
 
-    /**
-     * Monta e publica o evento CUSTOMER_STATUS_CHANGE. Diferente do
-     * publisher do datum-srv-clientes (que é best-effort, pois o cliente
-     * já foi persistido antes), aqui publicar É a própria operação - se a
-     * publicação falhar, deixamos a exceção propagar para o controller
-     * (mapeada para 502 pelo ApiExceptionHandler), já que não há nenhum
-     * outro efeito colateral bem-sucedido para preservar.
-     */
     public CustomerStatusChangeEvent publish(Long customerId, String status) {
         String normalizedStatus = StatusValidator.normalize(status);
 

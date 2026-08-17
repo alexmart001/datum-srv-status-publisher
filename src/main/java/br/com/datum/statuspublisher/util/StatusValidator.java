@@ -1,11 +1,5 @@
 package br.com.datum.statuspublisher.util;
 
-/**
- * Valida e normaliza o valor de status recebido, garantindo que só
- * "ACTIVE"/"INACTIVE" (case-insensitive) sejam publicados na fila - o
- * mesmo contrato que o CustomerStatusChangeListener do datum-srv-clientes
- * espera.
- */
 public final class StatusValidator {
 
     private StatusValidator() {}

@@ -13,15 +13,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          # Aponta para o Authorization Server (datum-srv-auth). O Spring
-          # resolve automaticamente o JWK Set a partir de
-          # {issuer-uri}/.well-known/oauth-authorization-server para
-          # validar a assinatura dos tokens.
           issuer-uri: http://${AUTH_HOST:localhost}:${AUTH_PORT:9000}
 
 datum:
   rabbitmq:
-    # Mesma fila que o datum-srv-clientes consome (CustomerStatusChangeListener).
-    # Publicamos direto nela via exchange padrão (""), com routing key igual
-    # ao nome da fila - sem exchange/binding customizado.
     customer-status-change-queue: customer_status_changed
